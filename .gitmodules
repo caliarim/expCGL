@@ -1,0 +1,3 @@
+[submodule "extern/KronPACK"]
+	path = extern/KronPACK
+	url = git@github.com:caliarim/KronPACK.git
