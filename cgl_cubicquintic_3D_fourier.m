@@ -10,7 +10,7 @@ ld = [-12,-12,-12];
 rd = [12,12,12];
 T = 20;
 m = 80;
-method = 'if4'; % strang, strang_3t, if2, split4, split4_3t, if4, rk4
+method = 'if4'; % strang, strang_3t, if2, split4, split4_3t, if4, rk2, rk4
 
 alpha1 = 1/2;
 beta1 = 1/2;
@@ -86,6 +86,9 @@ switch method
 
   case 'if4'
     U = if4_fourier(U0,M,g,T,m,ft,ift);
+
+  case 'rk2'
+    U = rk2(U0,f,T,m,1);
 
   case 'rk4'
     U = rk4(U0,f,T,m);

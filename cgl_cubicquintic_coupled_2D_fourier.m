@@ -11,7 +11,7 @@ rd = [70,35];
 T_st = 25;
 T = 15;
 m = 1000;
-method = 'if4'; % strang, if2, split4, if4, rk4
+method = 'if4'; % strang, if2, split4, if4, rk2, rk4
 
 alpha0 = -0.4;
 alpha1 = 0.125;
@@ -113,6 +113,9 @@ switch method
 
   case 'if4'
     U = if4_fourier_coupled(U0,M,gfun,T,m,ft,ift);
+
+  case 'rk2'
+    U = rk2_coupled(U0,ffun,T,m,1);
 
   case 'rk4'
     U = rk4_coupled(U0,ffun,T,m);
